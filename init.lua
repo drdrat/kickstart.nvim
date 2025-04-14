@@ -154,7 +154,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -193,6 +193,18 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Custom keymaps for custom plugins
+-- vim-fugitive keymaps
+vim.keymap.set('n', '<leader>gs', ':Git status<CR>', { desc = 'Git status' })
+vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { desc = 'Git commit' })
+vim.keymap.set('n', '<leader>gp', ':Git push<CR>', { desc = 'Git push' })
+vim.keymap.set('n', '<leader>gP', ':Git pull<CR>', { desc = 'Git pull' })
+vim.keymap.set('n', '<leader>gl', ':Git log<CR>', { desc = 'Git log' })
+vim.keymap.set('n', '<leader>gd', ':Git diff<CR>', { desc = 'Git diff' })
+vim.keymap.set('n', '<leader>gD', ':Git difftool<CR>', { desc = 'Git difftool' })
+vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = 'Git blame' })
+vim.keymap.set('n', '<leader>ga', ':Git add .<CR>', { desc = 'Git add .' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
